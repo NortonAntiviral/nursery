@@ -2,7 +2,7 @@
 @import "reset";
 @import "pages/about";
 @import "pages/home";
-
+@import "products/all";
 
 
 body {
@@ -103,9 +103,12 @@ header{
   z-index: 10;
   .logo{
     font-weight: 700;
-    color: #484c4f;
     font-size: 2rem;
     text-transform: uppercase;
+    a{
+      color: #484c4f;
+      text-decoration: none;
+    }
   }
   .menu{
     font-size: 1rem;
@@ -115,6 +118,10 @@ header{
       color:#484c4f;
       padding-right: 15px;
       text-decoration: none;
+      &:hover{
+        color: maroon;
+        transition: color .2s ease-in-out;
+      }
       &.cart-link{
         background: #666666;
         color:white;
@@ -123,9 +130,9 @@ header{
         position: relative;
         border-radius: 20px;
         &:hover{
-          background: darkslategray;
-          color: seashell;
-          transition: background .4s ease-in-out;
+          background: maroon;
+          color: papayawhip;
+          transition: background .2s ease-in-out;
         }
         span{
           position: absolute;
