@@ -3,6 +3,8 @@
 @import "pages/about";
 @import "pages/home";
 @import "products/all";
+@import "account/account";
+@import "account/login_register";
 
 
 body {
@@ -119,19 +121,19 @@ header{
       padding-right: 15px;
       text-decoration: none;
       &:hover{
-        color: maroon;
+        color: darkslategray;
         transition: color .2s ease-in-out;
       }
       &.cart-link{
-        background: #666666;
-        color:white;
+        background: #484c4f;
+        color:#ecf0f3;
         padding: 10px 20px;
         display: inline-block;
         position: relative;
         border-radius: 20px;
         &:hover{
-          background: maroon;
-          color: papayawhip;
+          background: darkslategray;
+          color: #ecf0f3;
           transition: background .2s ease-in-out;
         }
         span{
@@ -153,6 +155,7 @@ header{
 .content-area{
   filter: blur(0px);
   transition: filter .4s ease-in-out;
+  height: 100vh;
   &.cart-popup-active{
     filter: blur(20px);
     background: #e3e8ec;
@@ -345,6 +348,6 @@ header{
 
 .box-container{
   background: white;
-  border-radius: 10px;
-  padding: 80px 20px;
+  
+  margin: 8vh 20vh;
 }

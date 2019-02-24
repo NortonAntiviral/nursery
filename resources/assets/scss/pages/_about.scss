@@ -1,10 +1,10 @@
 .content-area.about-page{
     padding: 120px 0;
     h1{
-        font-size: 5rem;
+        font-size: 8rem;
         text-align: center;
         margin-bottom: 2rem;
-        font-weight: 400;
+        font-weight: 300;
     }
     p{
         max-width: 700px;
@@ -13,10 +13,11 @@
         font-size: 1.5rem;
         font-weight: 300;
         text-align: center;
+        // height: 500px;
     }
     .logo{
         font-weight: 700;
-        font-size: 2rem;
+        font-size: 4rem;
         text-transform: uppercase;
         a{
           color: #484c4f;
@@ -25,11 +26,12 @@
     }
     .action{
         font-weight: 400;
-        font-size: 2rem;
+        font-size: 4rem;
         text-transform: uppercase;
         a{
           color: #484848;
           text-decoration: none;
         }
     }
+   
 }
