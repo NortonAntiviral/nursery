@@ -2,7 +2,11 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  @!section('title')
+  
+  <title>
+    @!section('title')
+  </title>
+  
   
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lykmapipo/themify-icons@0.1.2/css/themify-icons.css">
   <link rel="stylesheet" href="/css/styles.css">
@@ -98,10 +102,15 @@
     <div class="checkout"><div class="title">Checkout</div><span class="ti-shopping-cart"></span></div>
 
   </section>
+  
 
   
+    
+   
+
+    @!section('javascript')
   <script src="js/dist/vendors~FirstComp.js"></script>
   <script src="js/dist/FirstComp.js"></script>
-  @!section('javascript')
+  
 </body>
 </html>

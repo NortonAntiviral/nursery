@@ -1,7 +1,9 @@
 .content-area.login_register-page{
     padding: 120px 0;
     .box-container{
-        max-width: 700px;
+        // max-width: 700px;
+        width: 70%;
+        padding: 20px 20px;
         margin: 0 auto !important;
     }
     h2{
@@ -12,10 +14,54 @@
     }
     .login-grid{
         display: grid;
-        grid-template-columns: 50% 50%;
+        &.register{
+            grid-template-columns: 1fr;
+            grid-gap: 20px;
+        }
+        &.login{
+            grid-template-columns: 1fr 1px 1fr;
+            grid-gap: 20px;
+        }
+        .line{
+            width: 2px;
+            height: 100%;
+            background: lightgray;
+        }
         form{
             display: flex;
-            flex-direction: row;
+            flex-direction: column;
+            a{
+                margin-bottom: 1rem;
+            }
+            
+        }
+        .social-accounts{
+            display: flex;
+            flex-direction: column;
+            a{
+                background: #e5e5e5;
+                width: 100%;
+                font-size: 1rem;
+                padding: 10px;
+                margin: 0 0 1rem;
+                text-align: center;
+                color: rgb(31, 31, 31);
+                text-decoration: none;
+                display: flex;
+                justify-content: center;
+                align-items:center;
+                span{
+                    margin: 0 15px 0 0;
+                }
+            }
+        }
+    }
+    .sign-up{
+        margin: 1rem auto;
+        text-align: center;
+        color: darkslategray;
+        a{
+            text-decoration: none;
         }
     }
     p{
