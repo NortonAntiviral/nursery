@@ -1,53 +1,149 @@
-@import url("https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700");
-@import "reset";
-@import "pages/about";
-@import "pages/home";
-@import "products/all";
-@import "products/single";
-@import "account/account";
-@import "account/login_register";
 
-.content-area.poduct-single-page{
-    display:grid;
-    grid-template-columns: 50% 50%;
-    grid-gap: 40px;
-    
-    .product-imgs{
-    height: 100vh;
-    width: 100%;
-    position: relative;
+.content-area.product-single-page{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 40px;
+  padding: 116px 0 0;
+  .titles{
+    position: unset;
+    padding: 1rem 0;
+    .brand{
+      text-transform: uppercase;
+      color:tomato;
+      font-weight: 900;
+      font-size: .8rem;
+      margin-bottom: 2rem;
+    }
     .product{
-      width: 100%;
-      height: 100%;
-      position:relative;
+      text-transform: capitalize;
+      color: #1f1f1f;
+      font-weight: 500;
+      font-size: 3rem;
+      margin-bottom: 1.5rem;
+    }
+  }
+  .product-imgs{
+  height: calc(100vh - 116px);
+  width: 100%;
+  position: relative;
+  margin-left: 10%;
+  .product{
+    width: 100%;
+    height: 100%;
+    position:relative;
+    display: flex;
+    // justify-content: center;
+    align-items: center;
+    .circle{
+      width:700px;
+      height: 700px;
+      border-radius: 50%;
+      background: #ecf0f3;
+      position: absolute;
       display: flex;
-      // justify-content: center;
+      justify-content: center;
       align-items: center;
-      .circle{
-        width:700px;
-        height: 700px;
-        border-radius: 50%;
-        background: #ecf0f3;
-        position: absolute;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        box-shadow: 0px 10px 151px 0px rgba(156, 156, 156, .27);
-      }
-      img{
-        width: 150%;
-      //  margin-bottom: 10rem;
-      }
+      box-shadow: 0px 10px 151px 0px rgba(156, 156, 156, .27);
     }
-  
+    img{
+      width: 150%;
+    //  margin-bottom: 10rem;
     }
+  }
+  }
+  .product-detail{
+    width:100%;
+    background-color: whitesmoke;
+    padding: 20px;
 
-    .product-detail{
-        width: 50%;
-        color: white;
+    .details{
+      p{
+        font-size: 1.1rem;
+        font-weight: 300;
+        line-height: 1.4;
+        margin-bottom: 2rem;
+      }
+    }
+    .detail-section{
+      padding: 0;
+
+      .toggle{
+        display: none;
+        &:checked{
+          & + .title + .content{
+            max-height: 400px;
+            overflow-x:hidden;
+            overflow-y: scroll;
+            &::-webkit-scrollbar {
+              display: none;
+            }
+          }
+          & + .title:before{
+            transform: rotate(90deg) !important;
+          }
+        }
+      }
+
+
+      .detail{
+        position: relative;
+        margin-bottom: 2rem;
+        
+      }
+      .title,.content{
+        backface-visibility: hidden;
+        transform: translateZ(0);
+        transition: all .2s;
+      }
+
+      .title{
+        // background: lightgray;
+        padding: 1rem 1rem;
+        display: block;
+        color: black;
         font-weight: 700;
+        // margin-bottom: 1rem;
+        cursor: pointer;
+        border: 1px solid #1f1f1f;
+      }
+      .title:after, .title:before{
+        content: '';
+        position: absolute;
+        right: 1.25em;
+        top: 1.25em;
+        width: 2px;
+        height: 0.75em;
+        background-color: black;
+        transition: all 0.2s;
+      }
+      .title:after{
+        transform: rotate(90deg);
+      }
 
+      .content{
+        max-height: 0;
+        overflow: hidden;
+        .option{
+          cursor: pointer;
+          // border: 1px solid lightgray;
+          padding: 10px;
+          display: inline-block;
+          color: darkslategray;
+          transition: all .2s ease-in-out;
+          display:flex;
+          align-items: center;
+          justify-content: center;
+          font-weight: 400;
+          &:hover, &.selected{
+            // background: darkslategray;
+            // color: #ecf0f3;
+            font-weight: 400;
+            // border: 1px solid darkslategray;
+          }
+        }
+      }
     }
+
+  }
 }  
- 
-  
+

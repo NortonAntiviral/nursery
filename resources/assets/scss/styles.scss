@@ -1,10 +1,11 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700");
 @import "reset";
-@import "pages/about";
 @import "pages/home";
+@import "pages/about";
 @import "products/all";
-@import "account/account";
+@import "products/single";
 @import "account/login_register";
+// @import "account/account";
 
 
 body {
