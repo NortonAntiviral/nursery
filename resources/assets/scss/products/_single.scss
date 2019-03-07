@@ -55,6 +55,7 @@
     width:100%;
     background-color: whitesmoke;
     padding: 20px;
+    height: 100%;
 
     .details{
       p{
@@ -64,6 +65,31 @@
         margin-bottom: 2rem;
       }
     }
+
+    .add-to-cart{
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 20px;
+
+      .button-area{
+        .button{
+          border: 1px solid #1f1f1f;
+          background:whitesmoke;
+          padding: 1rem 1rem;
+          display:block;
+          cursor: pointer;
+          color: black;
+          font-weight: 700;
+          margin-bottom: 1rem;
+          text-align: center;
+          &:hover{
+            background: black;
+            color: whitesmoke;
+          }
+        }
+      }
+    }
+
     .detail-section{
       padding: 0;
 
@@ -84,6 +110,30 @@
         }
       }
 
+       .sizes{
+         display: grid;
+         grid-template-columns: 1fr 1fr;
+         max-height:200px;
+         .option{
+          cursor: pointer;
+          border: 1px solid lightgray;
+          padding: 10px;
+          display: inline-block;
+          color: darkslategray;
+          transition: all .2s ease-in-out;
+          display:flex;
+          align-items: center;
+          justify-content: center;
+          font-weight: 400;
+          &:hover, &.selected{
+            background: darkslategray;
+            color: #ecf0f3;
+            font-weight: 400;
+            border: 1px solid darkslategray;
+          }
+        }
+       }
+       
 
       .detail{
         position: relative;
@@ -105,6 +155,10 @@
         // margin-bottom: 1rem;
         cursor: pointer;
         border: 1px solid #1f1f1f;
+        &.size-title{
+          background: darkslategray;
+          color: whitesmoke !important;
+        }
       }
       .title:after, .title:before{
         content: '';
@@ -115,9 +169,18 @@
         height: 0.75em;
         background-color: black;
         transition: all 0.2s;
+        &.size-title{
+          // background: darkslategray !important;
+          background-color: whitesmoke !important;
+        }
       }
       .title:after{
         transform: rotate(90deg);
+      }
+
+      .size-title:after, .size-title:before{
+        content: '';
+        background-color: whitesmoke;
       }
 
       .content{
