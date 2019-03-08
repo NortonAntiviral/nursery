@@ -4,6 +4,7 @@
   grid-template-columns: 1fr 1fr;
   grid-gap: 40px;
   padding: 116px 0 0;
+
   .titles{
     position: unset;
     padding: 1rem 0;
@@ -134,6 +135,29 @@
         }
        }
        
+       
+       .paragraph{
+        display: grid;
+        max-height:200px;
+        .option{
+         cursor: pointer;
+         border: 1px solid lightgray;
+         padding: 10px;
+         display: inline-block;
+         color: darkslategray;
+         transition: all .2s ease-in-out;
+         display:flex;
+         align-items: center;
+         justify-content: center;
+         font-weight: 400;
+         &:hover, &.selected{
+           background: darkslategray;
+           color: #ecf0f3;
+           font-weight: 400;
+           border: 1px solid darkslategray;
+         }
+       }
+      }
 
       .detail{
         position: relative;
