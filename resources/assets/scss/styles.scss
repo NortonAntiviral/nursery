@@ -5,7 +5,8 @@
 @import "products/all";
 @import "products/single";
 @import "account/login_register";
-// @import "account/account";
+@import "cart/checkout";
+@import "account/account";
 
 
 body {
@@ -159,7 +160,7 @@ header{
 .content-area{
   filter: blur(0px);
   transition: filter .4s ease-in-out;
-  height: 100vh;
+  height: 100%;
   &.cart-popup-active{
     filter: blur(20px);
     background: #e3e8ec;

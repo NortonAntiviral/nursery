@@ -1,0 +1,50 @@
+.content-area.checkout-page{
+    padding: 116px 0;
+    h1{
+        font-size: 3rem;
+        text-align: center;
+        margin-bottom: 2rem;
+        font-weight: 500;
+    }
+    p{
+        max-width: 700px;
+        margin: 0 auto;
+        line-height: 1.5;
+        font-size: 1.5rem;
+        font-weight: 300;
+        text-align: center;
+        // height: 500px;
+    }
+    a{
+        text-decoration: none;
+        columns: #484848;
+        display: flex;
+        flex-direction: row;
+        p{
+            padding-top: 20px;
+            color:#484848;
+        }
+        .follow{
+            color: #484c4f
+        }
+    }
+    .logo{
+        font-weight: 700;
+        font-size: 4rem;
+        text-transform: uppercase;
+        a{
+          color: #484c4f;
+          text-decoration: none;
+        }
+    }
+    .action{
+        font-weight: 400;
+        font-size: 3rem;
+        text-transform: uppercase;
+        a{
+          color: #484848;
+          text-decoration: none;
+        }
+    }
+   
+}
