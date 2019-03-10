@@ -10,6 +10,7 @@ body{
         text-align: center;
         margin-bottom: 2rem;
         font-weight: 500;
+        color: darkslategray;
     }
     p{
         max-width: 700px;
@@ -55,6 +56,7 @@ body{
         font-weight:500;
         text-align: center;
         padding: 20px;
+        color: darkslategrey;
     }
     .checkout-grid{
         display: grid;
@@ -62,6 +64,36 @@ body{
         grid-gap: 20px;
     }
    .forms{
+       .order-list{
+           table{
+               width: 100%;
+               border: 1px solid #000000;
+           }
+           td{
+            border: 1px solid #000000;
+            padding: 10px;
+            text-align: center;
+           }
+           thead{
+               background: darkslategray;
+               color: whitesmoke;
+           }
+           .tag{
+               display: inline-block;
+               padding: 10px 40px;
+               border-radius: 70px;
+               &.shipped{
+                   font-weight: 900;
+                   background-color: seagreen;
+                   color: whitesmoke;
+               }
+               &.cancelled{
+                   font-weight: 900;
+                   color: whitesmoke;
+                   background-color: crimson;
+               }
+           }
+       }
     h3{
         font-size: 1.7rem;
         margin: 1.5rem 0;

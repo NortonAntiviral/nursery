@@ -1,18 +1,54 @@
 @layout('layouts/main')
 
 @section('title')
-Nursery of Kickz | Account
+Nursery of Kickz | Orders
 @endsection
 
 @section('content')
 <section class="content-area account-page">
   <div class="container">
     <div class="box-container">
-      <h1>Account</h1>
+      <h1>Orders</h1>
       <hr>
       <div class="checkout-grid">
       <div class="forms">
-        Welcome to Your Account
+        <div class="order-list">
+            <table>
+                <thead>
+                    <tr>
+                        <td>ID</td>                        
+                        <td>Price</td>
+                        <td>Date</td>
+                        <td>Status</td>
+                    </tr>
+                </thead>
+                <tbody>
+                        <tr>
+                            <td>2123123</td>
+                            <td>$3,284.26</td>
+                            <td>3/10/19</td>
+                            <td><span class="tag shipped">Shipped</span></td>
+                        </tr>
+                    </tbody>
+                    <tbody>
+                            <tr>
+                                <td>2123123</td>
+                                <td>$3,284.26</td>
+                                <td>3/10/19</td>
+                                <td><span class="tag shipped">Shipped</span></td>
+                            </tr>
+                        </tbody>
+                        <tbody>
+                                <tr>
+                                    <td>2123123</td>
+                                    <td>$3,284.26</td>
+                                    <td>3/10/19</td>
+                                    <td><span class="tag cancelled">Cancelled</span></td>
+                                </tr>
+                            </tbody>
+
+            </table>
+        </div>
       </div>
       <div class="sub-menu">
         @include('account/sub-menu')
