@@ -1,0 +1,27 @@
+@layout('layouts/main')
+
+@section('title')
+Nursery of Kickz | Account
+@endsection
+
+@section('content')
+<section class="content-area account-page">
+  <div class="container">
+    <div class="box-container">
+      <h1>Account</h1>
+      <hr>
+      <div class="checkout-grid">
+      <div class="forms">
+        Welcome to Your Account
+      </div>
+      <div class="sub-menu">
+        @include('account/sub-menu')
+      </div>
+    </div>
+    </div>
+    </div>
+</section>
+@endsection
+
+{{-- @section('footer')
+@endsection --}}

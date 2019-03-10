@@ -1,6 +1,6 @@
 .content-area.checkout-page{
     padding: 116px 0;
-    background-color: 
+   
     h1{
         font-size: 3rem;
         text-align: center;
@@ -47,5 +47,41 @@
           text-decoration: none;
         }
     }
-   
+    h1{
+        font-weight:500;
+        text-align: center;
+        padding: 20px;
+    }
+    .checkout-grid{
+        display: grid;
+        grid-template-columns: 70% 1fr;
+        grid-gap: 20px;
+    }
+   .forms{
+    h3{
+        font-size: 1.7rem;
+        margin: 1.5rem 0;
+    }
+    form{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 20px;
+        label{
+            margin-bottom: 1rem;
+            display:block;
+        }
+    }
+   }
+   .totals{
+    border-left: 1px solid black;
+    .items,.tax,.shipping,.price{
+        margin: 0 1rem 1.3rem;
+        text-transform: capitalize;
+        font-weight: 300;
+        font-size: 1.6rem;
+        span{
+            font-weight: 700;
+        }
+    }
+   }
 }

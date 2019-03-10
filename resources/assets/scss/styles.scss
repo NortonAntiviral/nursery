@@ -97,15 +97,17 @@ h1 {
     color: #43D4D6;
   }
 }
+.header{
 
 header{
-  position: fixed;
+  position: fixed !important;
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
   padding: 20px;
   z-index: 10;
+  background: #e3e8ec;
   .logo{
     font-weight: 700;
     font-size: 2rem;
@@ -156,6 +158,7 @@ header{
       }
     }
   }
+}
 }
 .content-area{
   filter: blur(0px);
