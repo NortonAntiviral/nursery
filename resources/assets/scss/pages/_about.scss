@@ -1,56 +1,62 @@
-.content-area.about-page{
-    padding: 120px 0;
-    h1{
-        font-size: 3rem;
-        text-align: center;
-        margin-bottom: 2rem;
-        font-weight: 500;
-       
+.content-area.about-page {
+  padding: 120px 0;
+
+  h1 {
+    text-align: center;
+    font-weight: 700;
+    font-size: 4rem;
+    margin: 0 22rem;
+    text-transform: uppercase;
+    padding: 10px;
+    border: 6.5px solid darkslategrey;
+    -webkit-transform: skewX(-20deg);
+    transform: skewX(-20deg);
+    -webkit-transform-origin: 50% 50% 0;
+    transform-origin: 50% 50% 0;
+
+    a {
+      color: #484c4f;
+      text-decoration: none;
     }
-    p{
-        max-width: 700px;
-        margin: 0 auto;
-        line-height: 1.5;
-        font-size: 1.5rem;
-        font-weight: 300;
-        text-align: center;
-        padding-top: 20px;
-        
+  }
+
+  p {
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.5;
+    font-size: 1.5rem;
+    font-weight: 300;
+    text-align: center;
+
+  }
+
+  a {
+    text-decoration: none;
+    columns: #484848;
+    display: flex;
+    flex-direction: row;
+
+    p {
+      padding-top: 20px;
+      color: #484848;
     }
-    a{
-        text-decoration: none;
-        columns: #484848;
-        display: flex;
-        flex-direction: row;
-        p{
-            padding-top: 20px;
-            color:#484848;
-        }
-        .follow{
-            color: #484c4f
-        }
+
+    .follow {
+      color: #484c4f
     }
-    .logo{
-        font-weight: 700;
-        font-size: 4rem;
-        text-transform: uppercase;
-        border: 6.5px solid darkslategrey;
-        padding: 10px;
-        
-        a{
-          color: #484c4f;
-          text-decoration: none;
-          
-        }
+  }
+
+
+
+  .action {
+    font-weight: 400;
+    font-size: 3rem;
+    text-transform: uppercase;
+
+    a {
+      color: #484848;
+      text-decoration: none;
     }
-    .action{
-        font-weight: 400;
-        font-size: 3rem;
-        text-transform: uppercase;
-        a{
-          color: #484848;
-          text-decoration: none;
-        }
-    }
-   
+  }
+
 }

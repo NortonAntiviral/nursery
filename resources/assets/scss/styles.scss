@@ -114,6 +114,10 @@ header{
     text-transform: uppercase;
     padding:10px;
     border:6.5px solid  darkslategrey;
+    -webkit-transform:    skewX(-20deg);
+    transform:    skewX(-20deg);
+    -webkit-transform-origin: 50% 50% 0;
+    transform-origin: 50% 50% 0;
     a{
       color: #484c4f;
       text-decoration: none;
@@ -169,9 +173,6 @@ header{
   &.cart-popup-active{
     filter: blur(20px);
     background: #e3e8ec;
-  }
-  &.home-page{
-
   }
 }
 .top-section{
