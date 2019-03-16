@@ -11,7 +11,7 @@
 
 body {
   line-height: 1;
-  background: #e3e8ec;
+  background: #381d1d;
   max-height: 100%;
 }
 .container{
@@ -172,7 +172,7 @@ header{
   height: 100%;
   &.cart-popup-active{
     filter: blur(20px);
-    background: #e3e8ec;
+    background: #381d1d;
   }
 }
 .top-section{
@@ -191,7 +191,7 @@ header{
       width:700px;
       height: 700px;
       border-radius: 50%;
-      background: #ecf0f3;
+      background: #381d1d;
       position: absolute;
       display: flex;
       justify-content: center;
