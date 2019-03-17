@@ -107,7 +107,7 @@ header{
   width: 100%;
   padding: 20px;
   z-index: 10;
-  background: #e3e8ec;
+  background: whitesmoke;
   .logo{
     font-weight: 700;
     font-size: 2rem;
@@ -211,20 +211,19 @@ header{
   padding-left: 100px;
   h3{
     font-size: 5rem;
-    color: white;
-    margin-bottom: 2rem;
-    color: white;    
+    color: #eaead8;
+    margin-bottom: 2rem;   
   }
   h1{
     font-size: 10rem;
     font-weight: 900;
-    color: white;    
+    color: #eaead8;   
   }
 }
 
 #cart-popup{
-  background: #f2f6f7;
-  // opacity: 0.75;
+  background: #eaead8;
+    // opacity: 0.75;
   // height: 300px;
   position: fixed;
   bottom: 0;
@@ -246,7 +245,7 @@ header{
     left: 20px;
     .title{
       font-size: 2rem;
-      color: lightslategray;
+      color: darkslategray;
       position: absolute;
       width: 200px;
     }
@@ -273,7 +272,7 @@ header{
         left:-80px;
         }
       .delete-btn{
-        background: white;
+        background: whitesmoke;
         width: 100%;
         display: flex;
         align-items: end;
@@ -290,14 +289,14 @@ header{
         }
       }
       .circle{
-        background: lightgray;
+        background: darkgray;
         width: 50px;
         height: 50px;
         display: flex;
         justify-content: center;
         align-items: center;
         border-radius: 50%;
-        color: slategray;
+        color:whitesmoke;
         transition: background .4 ease-in-out;
       }
       }
@@ -319,14 +318,14 @@ header{
       display: flex;
     }
     .title{
-      background: white;
+      background: whitesmoke;
       display: inline-block;
       border-radius: 20px;
       padding: 5px 20px;
-      color: slategray;
+      color: darkslategray;
     }
     .number{
-      color: slategray;
+      color: darkslategray;
       font-size: 2rem;
       margin-bottom: 20px;
       font-weight: 700;
@@ -348,7 +347,7 @@ header{
         color:whitesmoke
       }
       .ti-shopping-cart{
-        color: lightgrey;
+        color: #eaead8;
       }
     }
     .title{

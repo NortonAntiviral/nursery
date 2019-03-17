@@ -6,8 +6,9 @@
     overflow: hidden;
 
     .filter-section{
+      background: whitesmoke;
       padding: 0 20px;
-      height: 80vh;
+      height: 100vh;
       overflow-x: hidden;
       overflow-y: scroll;
       padding: 0 20px 200px;
@@ -60,7 +61,7 @@
       }
 
       .title{
-        background: lightgray;
+        background: #eaead8;
         padding: 1rem;
         display: block;
         color: black;
@@ -124,7 +125,7 @@
         }
         .option{
           cursor: pointer;
-          border: 1px solid lightgray;
+          border: 1px solid lightslategray;
           padding: 10px;
           display: inline-block;
           color: darkslategray;
@@ -133,11 +134,12 @@
           align-items: center;
           justify-content: center;
           font-weight: 400;
+          background:#eaead8;
           &:hover, &.selected{
             background: darkslategray;
             color: #ecf0f3;
             font-weight: 400;
-            border: 1px solid darkslategray;
+            border: 1px solid lightslategray;
           }
         }
       }
@@ -149,13 +151,15 @@
     grid-gap: 20px;
     position: relative;
     padding: 0 40px 0 20px;
-    background: #e3e8ec;
+    // background: #381d1d;
+    background: #eaead8;
     .product-wrap{
       text-align: center;
       .title{
         font-size: 1.2rem;
         margin-bottom: 1rem;
         font-weight: 700;
+        color: darkslategray;
       }
       .price{
         font-size: .9rem;
@@ -192,14 +196,14 @@
     padding-left: 100px;
     h3{
       font-size: 5rem;
-      color: white;
+      color: #eaead8;
       margin-bottom: 2rem;
         
     }
     h1{
       font-size: 10rem;
       font-weight: 900;
-      color: white;    
+      color: #eaead8;   
     }
     }
     }

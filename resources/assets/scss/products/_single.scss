@@ -12,7 +12,7 @@
       text-transform: uppercase;
       color:tomato;
       font-weight: 900;
-      font-size: .8rem;
+      font-size: 2rem;
       margin-bottom: 2rem;
     }
     .product{
@@ -21,6 +21,11 @@
       font-weight: 500;
       font-size: 3rem;
       margin-bottom: 1.5rem;
+    }
+    .price{
+      font-weight: 900;
+      font-size: 1rem;
+      margin-bottom: 2rem;
     }
   }
   .product-imgs{
@@ -40,7 +45,7 @@
       width:700px;
       height: 700px;
       border-radius: 50%;
-      background: #ecf0f3;
+      background: #eaead8;
       position: absolute;
       display: flex;
       justify-content: center;
@@ -76,7 +81,7 @@
       .button-area{
         .button{
           border: 1px solid #1f1f1f;
-          background:whitesmoke;
+          background:#eaead8;
           padding: 1rem 1rem;
           display:block;
           cursor: pointer;
