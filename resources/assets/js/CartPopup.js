@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 
-class CartBtn extends Component {
+class CartPopup extends Component {
 	constructor() {
 		super();
 		this.state = {
@@ -12,7 +12,7 @@ class CartBtn extends Component {
 	async test() {}
 	render() {
 		return (
-			<a href="#" className="cart-link">
+			<a href="#" class="cart-link">
 				Cart
 				<span>
 					<div>14</div>
@@ -22,6 +22,6 @@ class CartBtn extends Component {
 	}
 }
 
-const CartBtnRoot = document.getElementById('CartBtnRoot');
+const CartPopupRoot = document.getElementById('CartPopupRoot');
 
-ReactDOM.render(<CartBtn />, CartBtnRoot);
+ReactDOM.render(<Layout />, CartPopup);

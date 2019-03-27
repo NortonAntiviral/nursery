@@ -6,7 +6,7 @@
     overflow: hidden;
 
     .filter-section{
-      background: whitesmoke;
+      background: #381d1d;
       padding: 0 20px;
       height: 100vh;
       overflow-x: hidden;
@@ -24,7 +24,7 @@
         width: 100%;
         border:none;
         &:hover{
-          background: darkslategray;
+          background: black;
           color: #e3e8ec;
           border:none
         }
@@ -113,7 +113,7 @@
           }
           .option:hover{
             background: whitesmoke;
-            color: darkslategray!important;
+            color: black!important;
           }
         }
         .size{
@@ -134,9 +134,9 @@
           align-items: center;
           justify-content: center;
           font-weight: 400;
-          background:#eaead8;
+          background:snow;
           &:hover, &.selected{
-            background: darkslategray;
+            background: black;
             color: #ecf0f3;
             font-weight: 400;
             border: 1px solid lightslategray;

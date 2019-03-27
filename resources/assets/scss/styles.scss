@@ -107,19 +107,19 @@ header{
   width: 100%;
   padding: 20px;
   z-index: 10;
-  background: whitesmoke;
+  background: #110a0a;;
   .logo{
     font-weight: 700;
     font-size: 2rem;
     text-transform: uppercase;
     padding:10px;
-    border:6.5px solid  darkslategrey;
+    border:6.5px solid  whitesmoke;
     -webkit-transform:    skewX(-20deg);
     transform:    skewX(-20deg);
     -webkit-transform-origin: 50% 50% 0;
     transform-origin: 50% 50% 0;
     a{
-      color: #484c4f;
+      color: snow;
       text-decoration: none;
     }
   }
@@ -127,15 +127,15 @@ header{
     font-size: 1rem;
     text-transform: uppercase;
     padding: 20px 0;
-    #cartBtn{
+    #CartBtn{
       display: inline-block;
     }
     a{
-      color:#484c4f;
+      color:snow;
       padding-right: 15px;
       text-decoration: none;
       &:hover{
-        color: darkslategray;
+        color: whitesmoke;
         transition: color .2s ease-in-out;
         text-decoration: underline;
       }
@@ -147,7 +147,7 @@ header{
         position: relative;
         border-radius: 20px;
         &:hover{
-          background: darkslategray;
+          background: whitesmoke;
           color: #ecf0f3;
           text-decoration: none;
           transition: background .2s ease-in-out;
@@ -175,7 +175,7 @@ header{
   height: 100%;
   &.cart-popup-active{
     filter: blur(20px);
-    background: #381d1d;
+    background: #110a0a;
   }
 }
 .top-section{
@@ -248,7 +248,7 @@ header{
     left: 20px;
     .title{
       font-size: 2rem;
-      color: darkslategray;
+      color: whitesmoke;
       position: absolute;
       width: 200px;
     }
@@ -275,7 +275,7 @@ header{
         left:-80px;
         }
       .delete-btn{
-        background: whitesmoke;
+        background: #381d1d;
         width: 100%;
         display: flex;
         align-items: end;
@@ -299,7 +299,7 @@ header{
         justify-content: center;
         align-items: center;
         border-radius: 50%;
-        color:whitesmoke;
+        color:#381d1d;
         transition: background .4 ease-in-out;
       }
       }
@@ -321,14 +321,14 @@ header{
       display: flex;
     }
     .title{
-      background: whitesmoke;
+      background: #381d1d;
       display: inline-block;
       border-radius: 20px;
       padding: 5px 20px;
-      color: darkslategray;
+      color: whitesmoke;
     }
     .number{
-      color: darkslategray;
+      color: whitesmoke;
       font-size: 2rem;
       margin-bottom: 20px;
       font-weight: 700;
@@ -393,7 +393,7 @@ footer{
         padding-right: 10px;
          text-decoration: none;
         &:hover{
-         color: darkslategray;
+         color: whitesmoke;
         transition: color .2s ease-in-out;
         text-decoration: underline;
        }
@@ -420,8 +420,8 @@ form{
     margin: 0 0 1rem;
     font-size: 1rem;
     padding: 10px;
-    background-color: darkslategray;
-    color: whitesmoke;
+    background-color: whitesmoke;
+    color: #381d1d;
     cursor: pointer;
     &:hover{
         background-color: #437070;

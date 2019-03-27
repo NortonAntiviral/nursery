@@ -8,14 +8,15 @@
     margin: 0 22rem;
     text-transform: uppercase;
     padding: 10px;
-    border: 6.5px solid darkslategrey;
+    border: 6.5px solid #381d1d;
     -webkit-transform: skewX(-20deg);
     transform: skewX(-20deg);
     -webkit-transform-origin: 50% 50% 0;
     transform-origin: 50% 50% 0;
+    color:#381d1d !important;
 
     a {
-      color: #484c4f;
+      color: #381d1d;
       text-decoration: none;
     }
   }
@@ -32,17 +33,17 @@
 
   a {
     text-decoration: none;
-    columns: #484848;
+    columns: black;
     display: flex;
     flex-direction: row;
 
     p {
       padding-top: 20px;
-      color: #484848;
+      color: black;
     }
 
     .follow {
-      color: #484c4f
+      color: black;
     }
   }
 
@@ -54,7 +55,7 @@
     text-transform: uppercase;
 
     a {
-      color: #484848;
+      color: black;
       text-decoration: none;
     }
   }
