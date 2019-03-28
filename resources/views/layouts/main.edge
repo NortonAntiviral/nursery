@@ -19,8 +19,8 @@
       <a href="/about">Bio</a>
       <a href="/products/new-arrivals">New Arrivals</a>
       <a href="/products">All Products</a>
-      <a href="#">Categories</a>
-      <div class="cart-link" id=CartBtnRoot>Cart<span><div>14</div></span></div>
+      {{--  <a href="#">Categories</a>  --}}
+      <div class="cart-link" id="CartBtnRoot">Cart<span><div>14</div></span></div>
     </div>
   </header>
 </div>
@@ -29,63 +29,9 @@
     @!section('content')
   </section>
 
-  <section id="cart-popup" class="">
-      <div class="cart-title">
-        <div class="title">My Cart</div>
-      </div>
-    <div class="cart-items">
+  <div class="CartPopupRoot">
 
-      <div class="item-container">
-      <div class="item">
-        <img src="/img/products/-Jordan-Retro-12-NY.png" alt="">
-        <div class="delete-btn">
-          <div class="circle">X</div></div>
-      </div>
-    </div>
-
-    <div class="item-container">
-        <div class="item">
-          <img src="/img/products/Nike-AdaptBB-Black.png" alt="">
-          <div class="delete-btn">
-            <div class="circle">X</div></div>
-        </div>
-      </div>
-
-      <div class="item-container">
-          <div class="item">
-            <img src="/img/products/Jordan-Retro6ST-Black.png" alt="">
-            <div class="delete-btn">
-              <div class="circle">X</div></div>
-          </div>
-        </div>
-
-        <div class="item-container">
-            <div class="item">
-              <img src="/img/products/Adidas-ADVMidShenron-Green.png" alt="">
-              <div class="delete-btn">
-                <div class="circle">X</div></div>
-            </div>
-          </div>
-
-      
-
-
-      </div>
-    <div class="product-total">
-      <div class="inside-container">
-      <div class="title">Total</div>
-      <div class="number">x14</div>
-      </div>
-    </div>
-    <div class="price-total">
-      <div class="inside-container">
-        <div class="title">Total</div>
-        <div class="number">$3,948.71</div>
-      </div>
-    </div>
-    <div class="checkout"><div class="title">Checkout</div><span class="ti-shopping-cart"></span></div>
-
-  </section>
+  </div>
   
 
   
@@ -93,8 +39,10 @@
    
 
     @!section('javascript')
-  <script src="/js/dist/vendors~CartBtn.js"></script>
+  <script src="/js/dist/vendors.js"></script>
   <script src="/js/dist/CartBtn.js"></script>
+  <script src="/js/dist/CartPopup.js"></script>
   
 </body>
 </html>
+

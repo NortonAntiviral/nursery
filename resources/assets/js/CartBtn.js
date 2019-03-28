@@ -8,6 +8,7 @@ class CartBtn extends Component {
 			name: 'Chris'
 		};
 	}
+
 	clickedBtn = () => {};
 	async test() {}
 	render() {

@@ -127,7 +127,7 @@ header{
     font-size: 1rem;
     text-transform: uppercase;
     padding: 20px 0;
-    #CartBtn{
+    #CartBtnRoot{
       display: inline-block;
     }
     a{
@@ -140,15 +140,15 @@ header{
         text-decoration: underline;
       }
       &.cart-link{
-        background: #484c4f;
-        color:#ecf0f3;
+        background: #eaead8;
+        color:black;
         padding: 10px 20px;
         display: inline-block;
         position: relative;
         border-radius: 20px;
         &:hover{
           background: whitesmoke;
-          color: #ecf0f3;
+          color: #381d1d;
           text-decoration: none;
           transition: background .2s ease-in-out;
         }
@@ -161,7 +161,9 @@ header{
           display: flex;
           justify-content: center;
           align-items: center;
-          background: black;
+          color: whitesmoke;
+          background: #381d1d;
+          // background: #eaead8;
           border-radius: 50%;
         }
       }
@@ -345,7 +347,7 @@ header{
     flex-direction: column;
     cursor: pointer;
     &:hover{
-      background: #30395C;
+      background: #381d1d;
       .title{
         color:whitesmoke
       }
@@ -389,7 +391,7 @@ footer{
        font-size: 1rem;
       padding: 20px 0;
        a{
-        color:#484c4f;
+        color:#381d1d;
         padding-right: 10px;
          text-decoration: none;
         &:hover{
@@ -420,11 +422,12 @@ form{
     margin: 0 0 1rem;
     font-size: 1rem;
     padding: 10px;
-    background-color: whitesmoke;
-    color: #381d1d;
+    background-color: lightgray;
+    color: black;
     cursor: pointer;
     &:hover{
-        background-color: #437070;
+        color:whitesmoke;
+        background-color: #381d1d;
     }
 }
 }
