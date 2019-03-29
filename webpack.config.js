@@ -16,8 +16,7 @@ compress.unused = true;
 module.exports = env => {
 	return {
 		entry: {
-			CartBtn: './resources/assets/js/CartBtn.js',
-			CartPopup: './resources/assets/js/CartPopup.js'
+			CartComponents: './resources/assets/js/CartComponents.js',
         },
 		output: {
 			path: path.resolve(__dirname, 'public/js/dist'),

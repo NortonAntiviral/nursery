@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
 
-class CartPopup extends Component {
+export default class CartPopup extends Component {
 	constructor() {
 		super();
 		this.state = {
@@ -25,7 +24,6 @@ class CartPopup extends Component {
 							</div>
 						</div>
 					</div>
-
 					<div className="item-container">
 						<div className="item">
 							<img src="/img/products/Nike-AdaptBB-Black.png" alt="" />
@@ -34,7 +32,6 @@ class CartPopup extends Component {
 							</div>
 						</div>
 					</div>
-
 					<div className="item-container">
 						<div className="item">
 							<img src="/img/products/Jordan-Retro6ST-Black.png" alt="" />
@@ -43,7 +40,7 @@ class CartPopup extends Component {
 							</div>
 						</div>
 					</div>
-
+					// test
 					<div className="item-container">
 						<div className="item">
 							<img src="/img/products/Adidas-ADVMidShenron-Green.png" alt="" />
@@ -73,7 +70,3 @@ class CartPopup extends Component {
 		);
 	}
 }
-
-const CartPopupRoot = document.getElementById('CartPopupRoot');
-
-ReactDOM.render(<CartPopup />, CartPopupRoot);

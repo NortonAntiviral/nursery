@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
 
-class CartBtn extends Component {
+export default class CartBtn extends Component {
 	constructor() {
 		super();
 		this.state = {
@@ -22,7 +21,3 @@ class CartBtn extends Component {
 		);
 	}
 }
-
-const CartBtnRoot = document.getElementById('CartBtnRoot');
-
-ReactDOM.render(<CartBtn />, CartBtnRoot);
