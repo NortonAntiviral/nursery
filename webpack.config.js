@@ -17,6 +17,7 @@ module.exports = env => {
 	return {
 		entry: {
 			CartComponents: './resources/assets/js/CartComponents.js',
+			ProductAddToCart: './resources/assets/js/components/ProductAddToCart.js'
         },
 		output: {
 			path: path.resolve(__dirname, 'public/js/dist'),
@@ -60,7 +61,7 @@ module.exports = env => {
 				cacheGroups: {
 					vendor: {
 						test: /[\\/]node_modules[\\/](react|react-dom|axios)[\\/]/,
-						name:'vendors',
+						name: 'vendors',
 						chunks: 'all'
 					}
 				}

@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { openingCart } from '../actions/allActions';
 
-export default class CartBtn extends Component {
+class CartBtn extends Component {
 	constructor() {
 		super();
 		this.state = {
-			name: 'Chris'
+			name: 'Norton'
 		};
 	}
 
@@ -12,7 +14,7 @@ export default class CartBtn extends Component {
 	async test() {}
 	render() {
 		return (
-			<a href="#" className="cart-link">
+			<a href="#" className="cart-link" onClick={this.props.openingCart}>
 				Cart
 				<span>
 					<div>14</div>
@@ -21,3 +23,15 @@ export default class CartBtn extends Component {
 		);
 	}
 }
+
+const mapStateToProps = state => {
+	console.log(state);
+	return state;
+};
+
+export default connect(
+	mapStateToProps,
+	{
+		openingCart
+	}
+)(CartBtn);

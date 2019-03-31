@@ -250,7 +250,7 @@ header{
     left: 20px;
     .title{
       font-size: 2rem;
-      color: whitesmoke;
+      color: #381d1d;
       position: absolute;
       width: 200px;
     }
@@ -330,7 +330,7 @@ header{
       color: whitesmoke;
     }
     .number{
-      color: whitesmoke;
+      color: black;
       font-size: 2rem;
       margin-bottom: 20px;
       font-weight: 700;
@@ -340,19 +340,19 @@ header{
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #fafaf8;
+    background: #eaead8;
     font-size: 2rem;
     font-weight: 700;
     text-transform: uppercase;
     flex-direction: column;
     cursor: pointer;
     &:hover{
-      background: #381d1d;
+      background: whitesmoke;
       .title{
-        color:whitesmoke
+        color:black;
       }
       .ti-shopping-cart{
-        color: #eaead8;
+        color: black;
       }
     }
     .title{

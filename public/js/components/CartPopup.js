@@ -1,41 +1,24 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { closingCart } from '../actions/allActions';
 
-class CartPopup extends Component {
+export default class CartPopup extends Component {
 	constructor() {
 		super();
 		this.state = {
-			name: 'Norton'
+			name: 'Chris'
 		};
 	}
-	componentDidUpdate() {
-		if (this.props.globalState.popupCartOpen == true) {
-			console.log(this.props.globalState.popupCartOpen);
-			const cartPopupElement = document.getElementById('cart-popup');
-			document.addEventListener('click', event => {
-				var clickedInside = cartPopupElement.contains(event.target);
-				if (clickedInside) {
-				} else {
-					this.props.closingCart();
-				}
-			});
-		}
-	}
-
+	clickedBtn = () => {};
+	async test() {}
 	render() {
 		return (
-			<section
-				id="cart-popup"
-				className={this.props.globalState.popupCartOpen == true ? 'active' : ''}
-			>
+			<section id="cart-popup" className="">
 				<div className="cart-title">
 					<div className="title">My Cart</div>
 				</div>
 				<div className="cart-items">
 					<div className="item-container">
 						<div className="item">
-							<img src="/img/products/Jordan-OGNRG-White.png" alt="" />
+							<img src="/img/products/-Jordan-Retro-12-NY.png" alt="" />
 							<div className="delete-btn">
 								<div className="circle">X</div>
 							</div>
@@ -57,7 +40,7 @@ class CartPopup extends Component {
 							</div>
 						</div>
 					</div>
-
+					// test
 					<div className="item-container">
 						<div className="item">
 							<img src="/img/products/Adidas-ADVMidShenron-Green.png" alt="" />
@@ -87,14 +70,3 @@ class CartPopup extends Component {
 		);
 	}
 }
-
-const mapStateToProps = state => {
-	return state;
-};
-
-export default connect(
-	mapStateToProps,
-	{
-		closingCart
-	}
-)(CartPopup);

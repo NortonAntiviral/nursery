@@ -26,6 +26,7 @@
       font-weight: 900;
       font-size: 1rem;
       margin-bottom: 2rem;
+      color:red;
     }
   }
   .product-imgs{
@@ -126,15 +127,15 @@
           border: 1px solid lightgray;
           padding: 10px;
           display: inline-block;
-          color: darkslategray;
+          color: black;
           transition: all .2s ease-in-out;
           display:flex;
           align-items: center;
           justify-content: center;
           font-weight: 400;
           &:hover, &.selected{
-            background: darkslategray;
-            color: #ecf0f3;
+            background: #eaead8;
+            color: #381d1d;
             font-weight: 400;
             border: 1px solid darkslategray;
           }
