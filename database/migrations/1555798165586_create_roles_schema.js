@@ -3,10 +3,10 @@
 /** @type {import('@adonisjs/lucid/src/Schema')} */
 const Schema = use('Schema')
 
-class CreateCategoriesSchema extends Schema {
+class CreateRolesSchema extends Schema {
   up () {
     this.raw(
-      `CREATE TABLE categories(
+      `CREATE TABLE roles(
         id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
         title VARCHAR(200) NOT NULL,
         created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
@@ -17,8 +17,8 @@ class CreateCategoriesSchema extends Schema {
   }
 
   down () {
-    this.raw('DROP TABLE categories')
+    this.raw('DROP TABLE roles')
   }
 }
 
-module.exports = CreateCategoriesSchema
+module.exports = CreateRolesSchema
