@@ -6,7 +6,7 @@ const Schema = use('Schema')
 class CreateBrandsSchema extends Schema {
   up () {
     this.raw(
-      `CREATE TABLE brands(
+      `CREATE TABLE types(
         id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
         title VARCHAR(200) NOT NULL,
         description TEXT,
@@ -18,7 +18,7 @@ class CreateBrandsSchema extends Schema {
   }
 
   down () {
-    this.raw('DROP TABLE brands')
+    this.raw('DROP TABLE types')
   }
 }
 

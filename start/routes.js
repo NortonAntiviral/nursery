@@ -33,6 +33,6 @@ Route.get('/account/change-password', 'UserController.changePassword');
 Route.get('/account/orders', 'UserController.orders');
 
 // User Authentication
-Route.get('/register', 'UserController.register');
-Route.get('/login', 'UserController.login');
+Route.get('/register', 'AuthController.register');
+Route.get('/login', 'AuthController.login');
 
