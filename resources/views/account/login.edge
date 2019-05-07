@@ -11,7 +11,8 @@ Nursery of Kickz | Login
         <h2>Log In</h2>
         <div class="login-grid login">
             
-                <form action="" method="POST">
+                <form action="/login" method="POST">
+                        {{ csrfField() }}
                     <input type="email" name="email" placeholder="email"/>
                     <input type="password" name="password" placeholder="password"/>
                     <a href="/account/forgot-password">Forgot Password</a>

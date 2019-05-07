@@ -11,11 +11,34 @@ Nursery of Kickz | Register
         <h2>Register</h2>
         <div class="login-grid register">
             
-                <form action="" method="POST">
-                    <input type="email" name="email" placeholder="email"/>
-                    <input type="password" name="password" placeholder="password"/>
+                <form action="/register" method="POST">
+                  {{ csrfField() }}
+                    <input type="email" name="email" placeholder="email" value="{{old('email','')}}" class="
+                    @if(hasErrorFor('email'))
+                    error
+                    @endif
+                    "/>
+                    @if(hasErrorFor('email'))
+                    <div class="error-message">{{ getErrorFor('email')}}</div>
+                    @endif
+                    <input type="password" name="password" placeholder="password" value="{{old('password','')}}" class="
+                    @if(hasErrorFor('password'))
+                    error
+                    @endif
+                    "/>
+                    @if(hasErrorFor('password'))
+                    <div class="error-message">{{ getErrorFor('password')}}</div>
+                    @endif
+                    <input type="password" name="confirm_password" placeholder="Confirm Password" value="{{old('confirm_password','')}}" class="
+                    @if(hasErrorFor('confirm_password'))
+                    error
+                    @endif
+                    "/>
+                    @if(hasErrorFor('confirm_password'))
+                    <div class="error-message">{{ getErrorFor('confirm_password')}}</div>
+                    @endif
                     
-                    <button type="submit">Log In</button>
+                    <button type="submit">Register</button>
                 </form>
                 <div class="line"></div>
            
