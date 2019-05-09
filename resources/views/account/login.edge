@@ -13,8 +13,24 @@ Nursery of Kickz | Login
             
                 <form action="/login" method="POST">
                         {{ csrfField() }}
-                    <input type="email" name="email" placeholder="email"/>
-                    <input type="password" name="password" placeholder="password"/>
+                    <input type="email" name="email" placeholder="email" value="{{old('email','')}}" class="
+                    @if(hasErrorFor('email'))
+                    error
+                    @endif
+                    "/>
+                    @if(hasErrorFor('email'))
+                    <div class="error-message">{{ getErrorFor('email')}}</div>
+                    @endif
+                    
+                    <input type="password" name="password" placeholder="password" value="{{old('password','')}}"  class="
+                    @if(hasErrorFor('password'))
+                    error
+                    @endif
+                    "/>
+                    @if(hasErrorFor('password'))
+                    <div class="error-message">{{ getErrorFor('password')}}</div>
+                    @endif
+                    
                     <a href="/account/forgot-password">Forgot Password</a>
                     <button type="submit">Log In</button>
                 </form>

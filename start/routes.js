@@ -22,7 +22,7 @@ Route.get('/about', 'PageController.about');
 // Products
 Route.get('/products', 'ProductController.index');
 Route.get('/:brands/:subcategory/:slug', 'ProductController.show');
-Route.get('/products/new-arrivals', 'ProductController.newArrivals');
+Route.get('/products/new-arrivals', 'ProductController.newArrivals').middleware('auth');
 
 // Cart
 Route.get('/cart/checkout', 'CartController.checkout');
@@ -36,4 +36,6 @@ Route.get('/account/orders', 'UserController.orders');
 Route.get('/register', 'AuthController.register');
 Route.post('/register', 'AuthController.storeUser');
 Route.get('/login', 'AuthController.login');
+Route.post('/login', 'AuthController.handleLogin');
+Route.get('/logout', 'AuthController.logout');
 

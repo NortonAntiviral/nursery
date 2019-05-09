@@ -106,6 +106,7 @@ header{
   align-items: center;
   width: 100%;
   padding: 20px;
+  margin: 0 0 20px;
   z-index: 10;
   background: #110a0a;;
   .logo{
@@ -438,4 +439,35 @@ form{
         background-color: #381d1d;
     }
 }
+}
+
+#alert-box{
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 20;
+  padding: 20px;
+  width: 100%;
+  cursor: pointer;
+  &.active{
+   display:block; 
+  }
+  .title{
+    font-weight: 700;
+    font-size: 1.5rem;
+    margin-bottom:2rem;
+  }
+  &.notification{
+    background: black;
+    color: whitesmoke;
+  }
+  &.success{
+    background:#eaead8;
+    color: black;
+  }
+  &.error{
+    background: firebrick;
+    color: white;
+  }
 }

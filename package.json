@@ -37,6 +37,7 @@
     "@babel/plugin-transform-async-to-generator": "^7.1.0",
     "mysql": "^2.16.0",
     "redux": "^4.0.1",
+    "sqlstring": "^2.3.1",
     "webpack-dev-server": "^3.1.14"
   },
   "devDependencies": {
