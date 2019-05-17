@@ -8,11 +8,13 @@ class CreateAddressesSchema extends Schema {
     this.raw(
       `CREATE TABLE addresses(
         id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-        adress VARCHAR(100) NOT NULL,
+        address VARCHAR(100) NOT NULL,
         address_2 VARCHAR(100),
         city VARCHAR(60) NOT NULL,
+        state VARCHAR(2) NOT NULL,
         country VARCHAR(3) NOT NULL,
         zipcode VARCHAR(5) NOT NULL,
+        address_type VARCHAR(40) NOT NULL,
         user_id INT UNSIGNED NOT NULL,
         FOREIGN KEY(user_id) REFERENCES users(id),
         created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
