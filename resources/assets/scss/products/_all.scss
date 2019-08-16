@@ -6,7 +6,8 @@
     overflow: hidden;
 
     .filter-section{
-      background: #381d1d;
+      // background: #381d1d;
+      background: -webkit-linear-gradient(left, black 0%, #381d1d 100%);
       padding: 0 20px;
       height: 100vh;
       overflow-x: hidden;

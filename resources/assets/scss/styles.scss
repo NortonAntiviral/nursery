@@ -12,7 +12,9 @@
 
 body {
   line-height: 1;
-  background: #381d1d;
+  // background: #381d1d;
+  background: -webkit-linear-gradient(left, black 30%, #381d1d 100%);
+  background: linear-gradient(to bottom right, black 30%, #381d1d 100%);
   max-height: 100%;
 }
 .container{
@@ -109,7 +111,7 @@ header{
   padding: 20px;
   margin: 0 0 20px;
   z-index: 10;
-  background: #110a0a;;
+  background: #110a0a;
   .logo{
     font-weight: 700;
     font-size: 2rem;

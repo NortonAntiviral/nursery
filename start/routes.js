@@ -19,6 +19,16 @@ const Route = use('Route')
 Route.get('/', 'PageController.home');
 Route.get('/about', 'PageController.about');
 
+// Admin
+Route.get('/admin', 'Admin/AdminController.index');
+// Admin/Products/Types
+Route.get('/admin/products/types', 'Admin/Products/TypeController.index');
+Route.post('/admin/products/types', 'Admin/Products/TypeController.store');
+Route.get('/admin/products/types/new', 'Admin/Products/TypeController.create');
+Route.put('/admin/products/types/:id', 'Admin/Products/TypeController.update');
+Route.get('/admin/products/types/:id/edit', 'Admin/Products/TypeController.edit');
+Route.get('/admin/products/types/:id/delete', 'Admin/Products/TypeController.delete');
+
 // Products
 Route.get('/products', 'ProductController.index');
 Route.get('/:brands/:subcategory/:slug', 'ProductController.show');
@@ -39,3 +49,4 @@ Route.get('/login', 'AuthController.login');
 Route.post('/login', 'AuthController.handleLogin');
 Route.get('/logout', 'AuthController.logout');
 
+    `               `
