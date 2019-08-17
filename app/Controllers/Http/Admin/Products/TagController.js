@@ -3,19 +3,20 @@ const Database = use('Database');
 const sanitize = use('sqlstring');
 const { validate } = use('Validator');
 
-class TypeController {
+class TagController {
     async index({view, auth, request, response}){
         let pageRows = request.all().hasOwnProperty('rows') ? parseInt(request.all().rows) : 10;
         let start = request.all().hasOwnProperty('page') ? ((parseInt(request.all().page) - 1) * pageRows) : 0;       
         try{
-            let allTypes = await Database.raw(`
-            SELECT *, DATE_FORMAT(types.updated_at, '%m-%d-%y') as updated_at, DATE_FORMAT(types.created_at, '%m-%d-%y') as created_at FROM types  ORDER BY title ASC LIMIT ${start}, ${pageRows}    
+            let allTags = await Database.raw(`
+            SELECT *, DATE_FORMAT(tags.updated_at, '%m-%d-%y') as updated_at, DATE_FORMAT(tags.created_at, '%m-%d-%y') as created_at FROM tags  ORDER BY title ASC LIMIT ${start}, ${pageRows}    
             `);
-            allTypes = allTypes[0];
+            allTags = allTags[0];
             let tableRows = await Database.raw(`
-            SELECT COUNT("id") as tableRows FROM types
+            SELECT COUNT("id") as tableRows FROM tags
             `);
             tableRows = tableRows[0][0].tableRows;
+
             let totalPages = tableRows > pageRows ? Math.ceil(tableRows / pageRows) : 1;
             let arrayOfPages = [];
             let i = 0;
@@ -23,8 +24,8 @@ class TypeController {
                 arrayOfPages.push(i + 1);
             }
             // return arrayOfPages;
-            return view.render('admin/products/types/all_types.edge',{ 
-                allTypes,
+            return view.render('admin/products/tags/all_tags.edge',{ 
+                allTags,
             currentPage: request.all().hasOwnProperty('page') ? parseInt(request.all().page) : 1,
              arrayOfPages,
              totalPages,
@@ -37,15 +38,14 @@ class TypeController {
     }
     async create({view, auth, request, response}){
         try{
-            return view.render('admin/products/types/new_type.edge');
+            return view.render('admin/products/tags/new_tag.edge');
         } catch(error){
             console.log(error);
             return response.redirect('back');
         }
     }
     async store({view, auth, request, response, session}){
-          const validation = await validate(request.all(), {title: 'required|unique:types,title',
-          description: 'required'});
+          const validation = await validate(request.all(), {title: 'required|unique:tags,title'});
           if (validation.fails()) {
             session.withErrors(validation.messages()).flashAll();
             session.flash({errors: 'Oops, There was a problem'});
@@ -54,13 +54,12 @@ class TypeController {
         try{
             const post = request.post();
             await Database.raw(`
-            INSERT INTO types (title, description) VALUES(
-                ${sanitize.escape(post.title)},
-                ${sanitize.escape(post.description)}
+            INSERT INTO tags (title) VALUES(
+                ${sanitize.escape(post.title)}
                 )            
             `);
             session.flash({notification: 'Changes Submitted'});
-            return response.redirect('/admin/products/types');
+            return response.redirect('/admin/products/tags');
         } catch(error){
             console.log(error);
             return response.redirect('back');
@@ -68,20 +67,19 @@ class TypeController {
     }
     async edit({view, auth, request, response, params}){
         try{
-            let type = await Database.raw(`
-            SELECT * from types WHERE id = ${params.id}
+            let tags = await Database.raw(`
+            SELECT * from tags WHERE id = ${params.id}
             `);
-            type = type[0][0];
+            tags = tags[0][0];
 
-            return view.render('admin/products/types/edit_types.edge', { type });
+            return view.render('admin/products/tags/edit_tag.edge', { tags });
         } catch(error){
             console.log(error);
             return response.redirect('back');
         }
     }
     async update({view, auth, request, response,params,session}){
-        const validation = await validate(request.all(), {title: 'required',
-        description: 'required'});
+        const validation = await validate(request.all(), {title: 'required'});
         if (validation.fails()) {
           session.withErrors(validation.messages()).flashAll();
           session.flash({errors: 'Oops, There was a problem'});
@@ -90,14 +88,13 @@ class TypeController {
         try{
             const post = request.post();
             await Database.raw(`
-            UPDATE types
+            UPDATE tags
             SET
             title = ${sanitize.escape(post.title)},
-            description = ${sanitize.escape(post.description)}
             WHERE id = ${params.id}           
             `);
             session.flash({notification: 'Changes Submitted'});
-            return response.redirect(`/admin/products/types/${params.id}/edit`);
+            return response.redirect(`/admin/products/tags/${params.id}/edit`);
         } catch(error){
             console.log(error);
             return response.redirect('back');
@@ -107,15 +104,16 @@ class TypeController {
         try{
             const post = request.post();
             await Database.raw(`
-            DELETE FROM types
+            DELETE FROM tags
             WHERE id = ${params.id}           
             `);
-            return response.redirect(`/admin/products/types/`);
+            return response.redirect(`/admin/products/tags/`);
         } catch(error){
             console.log(error);
             return response.redirect('back');
         }
     }
+    
 }
 
-module.exports = TypeController
+module.exports = TagController

@@ -21,13 +21,38 @@ Route.get('/about', 'PageController.about');
 
 // Admin
 Route.get('/admin', 'Admin/AdminController.index');
-// Admin/Products/Types
+
+// Admin/Products**********************************************************************
+Route.get('/admin/products/tags', 'Admin/Products/TagController.index');
+Route.post('/admin/products/tags', 'Admin/Products/TagController.store');
+Route.get('/admin/products/tags/new', 'Admin/Products/TagController.create');
+Route.put('/admin/products/tags/:id', 'Admin/Products/TagController.update');
+Route.get('/admin/products/tags/:id/edit', 'Admin/Products/TagController.edit');
+Route.get('/admin/products/tags/:id/delete', 'Admin/Products/TagController.delete');
+
+// Admin/Products/Types************************************************************************
 Route.get('/admin/products/types', 'Admin/Products/TypeController.index');
 Route.post('/admin/products/types', 'Admin/Products/TypeController.store');
 Route.get('/admin/products/types/new', 'Admin/Products/TypeController.create');
 Route.put('/admin/products/types/:id', 'Admin/Products/TypeController.update');
 Route.get('/admin/products/types/:id/edit', 'Admin/Products/TypeController.edit');
 Route.get('/admin/products/types/:id/delete', 'Admin/Products/TypeController.delete');
+
+// Admin/Products/Categories**********************************************************************
+Route.get('/admin/products/categories', 'Admin/Products/CategoryController.index');
+Route.post('/admin/products/categories', 'Admin/Products/CategoryController.store');
+Route.get('/admin/products/categories/new', 'Admin/Products/CategoryController.create');
+Route.put('/admin/products/categories/:id', 'Admin/Products/CategoryController.update');
+Route.get('/admin/products/categories/:id/edit', 'Admin/Products/CategoryController.edit');
+Route.get('/admin/products/categories/:id/delete', 'Admin/Products/CategoryController.delete');
+
+// Admin/Products/Tags**********************************************************************
+Route.get('/admin/products/tags', 'Admin/Products/TagController.index');
+Route.post('/admin/products/tags', 'Admin/Products/TagController.store');
+Route.get('/admin/products/tags/new', 'Admin/Products/TagController.create');
+Route.put('/admin/products/tags/:id', 'Admin/Products/TagController.update');
+Route.get('/admin/products/tags/:id/edit', 'Admin/Products/TagController.edit');
+Route.get('/admin/products/tags/:id/delete', 'Admin/Products/TagController.delete');
 
 // Products
 Route.get('/products', 'ProductController.index');
