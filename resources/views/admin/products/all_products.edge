@@ -1,0 +1,132 @@
+@layout('layouts/admin')
+
+@section('title')
+Products | Nursery of Kickz
+@endsection
+
+@section('breadcrumbs')
+<div class="breadcrumbs-area clearfix">
+        <h4 class="page-title pull-left">Products</h4>
+        <ul class="breadcrumbs pull-left">
+            <li><a href="/admin/products">Products</a></li>
+            <li><span>All Products</span></li>
+        </ul>
+    </div>
+@endsection
+
+@section('content')
+<div class="mt-5 mb-5">
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                        <div class="card-body">
+                                <h4 class="header-title">
+                                    <div class="row">
+                                         <div class="col-md-9">Products Table</div> 
+                                <div class="col-md-3 justify-content-end d-flex">
+                                    <a href="/admin/products/new"><button type="button" class="btn btn-rounded btn-dark md-3"><i class="fa fa-plus-circle"></i> Product</button></a>
+                                    </div> </h4>
+                                </div>
+                                <div class="single-table">
+                                    <div class="table-responsive">
+                                        <table class="table table-hover progress-table text-center">
+                                            <thead class="text-uppercase">
+                                                <tr>
+                                                    <th scope="col">ID</th>
+                                                    <th scope="col">SKU</th>
+                                                    <th scope="col">Title</th>
+                                                    <th scope="col">Description</th>
+                                                    <th scope="col">Image</th>
+                                                    <th scope="col">Color</th>
+                                                    <th scope="col">Price</th>
+                                                    <th scope="col">QTY</th>
+                                                    <th scope="col">Material</th>
+                                                    <th scope="col">Brand</th>
+                                                    <th scope="col">Type</th>
+                                                    <th scope="col">User</th>
+                                                    <th scope="col">Created</th>
+                                                    {{--  <th scope="col">Creator</th>  --}}
+                                                    <th scope="col">Updated</th>
+                                                    {{--  <th scope="col">Updated By</th>  --}}
+                                                    <th scope="col">Action</th>
+
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                {{--  loop starts  --}}
+                                                @each(product in allProducts)
+                                                <tr>
+                                                        <th scope="row">
+                                                            {{product.id}}
+                                                        </th>
+                                                        <td>{{product.sku}}</td>
+                                                        <td>{{product.title}}</td>
+                                                        <td>{{product.description.slice(0,40)}} ...</td>
+                                                        <td>
+                                                           <img src={{ product.image_url }} alt= >
+                                                                                                        
+                                                        </td> 
+                                                        <td>{{product.color}}</td>
+                                                        <td>{{product.price}}</td>
+                                                        <td>{{product.qty}}</td>
+                                                        <td>{{product.material}}</td>
+                                                        <td>{{product.brand_id}}</td>
+                                                        <td>{{product.type_id}}</td>
+                                                        <td>{{product.user_id}}</td>
+                                                        <td>
+                                                                {{product.created_at}}
+                                                        </td>
+                                                        <td>{{product.updated_at}}</td>
+                                                        <td>
+                                                            <ul class="d-flex justify-content-center">
+                                                                <li class="mr-3"><a href="products/{{product.id}}/edit" class="text-secondary"><i class="fa fa-edit"></i></a></li>
+                                                                <li><a href="/admin/products/{{product.id}}/delete" onclick="return confirm('Verify Delete');" class="text-danger"><i class="ti-trash"></i></a></li>
+                                                            </ul>
+                                                        </td>
+                                                    </tr>
+                                                </tr>
+                                                @endeach
+                                               
+                                                    
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="d-flex justify-content-center">
+                    <nav aria-label="...">
+                            <ul class="pagination pg-color-border">
+                                    @if(currentPage !== arrayOfPages[0])
+                                    <li class="page-item">
+                                            <a class="page-link" href="/admin/products/?page={{currentPage - 1}}&rows={{pageRows}}" tabindex="-1">Previous</a>
+                                        </li>
+                                    @endif
+                                @each(page in arrayOfPages)
+                                
+                                <li class="page-item  
+                                @if(page == currentPage)
+                                active
+                                @endif
+                                ">
+                                    <a class="page-link" href="/admin/products/?page={{page}}&rows={{pageRows}}">{{page}} <span class="sr-only">(current)</span></a>
+                                </li>
+                                @endeach
+                                @if(currentPage !== totalPages)
+                                <li class="page-item">
+                                        <a class="page-link" href="/admin/products/?page={{currentPage + 1}}&rows={{pageRows}}">Next</a>
+                                    </li>
+                                @endif
+                            </ul>
+                        </nav>
+            </div>
+        </div>
+    </div>
+</div>
+        
+      
+
+ @endsection

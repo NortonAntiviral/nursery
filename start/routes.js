@@ -23,12 +23,12 @@ Route.get('/about', 'PageController.about');
 Route.get('/admin', 'Admin/AdminController.index');
 
 // Admin/Products**********************************************************************
-Route.get('/admin/products/tags', 'Admin/Products/TagController.index');
-Route.post('/admin/products/tags', 'Admin/Products/TagController.store');
-Route.get('/admin/products/tags/new', 'Admin/Products/TagController.create');
-Route.put('/admin/products/tags/:id', 'Admin/Products/TagController.update');
-Route.get('/admin/products/tags/:id/edit', 'Admin/Products/TagController.edit');
-Route.get('/admin/products/tags/:id/delete', 'Admin/Products/TagController.delete');
+Route.get('/admin/products', 'Admin/Products/ProductController.index');
+Route.post('/admin/products', 'Admin/Products/ProductController.store');
+Route.get('/admin/products/new', 'Admin/Products/ProductController.create');
+Route.put('/admin/products/:id', 'Admin/Products/ProductController.update');
+Route.get('/admin/products/:id/edit', 'Admin/Products/ProductController.edit');
+Route.get('/admin/products/:id/delete', 'Admin/Products/ProductController.delete');
 
 // Admin/Products/Types************************************************************************
 Route.get('/admin/products/types', 'Admin/Products/TypeController.index');

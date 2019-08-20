@@ -30,7 +30,7 @@ class ProductSeeder {
       INSERT INTO nursery.products(sku, title, description, image_url, color, price, qty, material, brand_id, type_id, user_id)
       Values("ADS3303ADVMSHRN","Advanced Mid Shenron",
        "insert description",
-        "/img/products/Adidas-ADVMidShenron.png","green",300,10,"mesh", 2, 2, 5)
+        "/img/products/Adidas-ADVMidShenron-Green.png","green",300,10,"mesh", 2, 2, 5)
       `)
     } catch (error) {
       console.log(error);
@@ -40,7 +40,7 @@ class ProductSeeder {
       INSERT INTO nursery.products(sku, title, description, image_url, color, price, qty, material, brand_id, type_id, user_id)
       Values("JRD6INF4987BLACK","Jordan 5 Infrared",
        "insert description",
-        "/img/products/Jordan6Infrared.png","black",300,10,"mesh", 1, 3, 5)
+        "/img/products/Jordan-Jordan6Infrared-Black.png","black",300,10,"mesh", 1, 3, 5)
       `)
     } catch (error) {
       console.log(error);

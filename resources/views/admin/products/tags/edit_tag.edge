@@ -35,7 +35,7 @@
                                 </div>
                                     <div class="form-group">
                                         <label for="title" class="col-form-label">Title</label>
-                                        <input class="form-control" type="text" placeholder="Title Here" id="title" name="title" value="{{old ('title', tags.title)}}">
+                                        <input class="form-control" type="text" placeholder="Title Here" id="title" name="title" value="{{old ('title', tag.title)}}">
                                         @if(hasErrorFor('title'))
                                         <small class="form-text text-muted" style="color: red !important">{{ getErrorFor('title')}}</small>
                                         @endif
