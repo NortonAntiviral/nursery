@@ -52,7 +52,8 @@ class ProductController {
             qty:'required',
             material:'required',
             brand_id:'required',
-            type_id:'required'
+            type_id:'required',
+            user_id:'required'
             });
           if (validation.fails()) {
             session.withErrors(validation.messages()).flashAll();
@@ -64,14 +65,15 @@ class ProductController {
             await Database.raw(`
             INSERT INTO products (title, description) VALUES(
                 ${sanitize.escape(post.sku)},
-                ${sanitize.escape(post.title)}
+                ${sanitize.escape(post.title)},
                 ${sanitize.escape(post.image_url)},
-                ${sanitize.escape(post.description)}
+                ${sanitize.escape(post.description)},
                 ${sanitize.escape(post.color)},
                 ${sanitize.escape(post.price)}
                 ${sanitize.escape(post.qty)},
-                ${sanitize.escape(post.material)}
+                ${sanitize.escape(post.material)},
                 ${sanitize.escape(post.brand_id)},
+                ${sanitize.escape(post.type_id)},
                 ${sanitize.escape(post.type_id)}
                 )            
             `);
@@ -104,7 +106,8 @@ class ProductController {
         qty:'required',
         material:'required',
         brand_id:'required',
-        type_id:'required'});
+        type_id:'required',
+        user_id:'required'});
         if (validation.fails()) {
           session.withErrors(validation.messages()).flashAll();
           session.flash({errors: 'Oops, There was a problem'});
@@ -115,8 +118,17 @@ class ProductController {
             await Database.raw(`
             UPDATE products
             SET
+            sku =${sanitize.escape(post.sku)},
             title = ${sanitize.escape(post.title)},
-            description = ${sanitize.escape(post.description)}
+            description = ${sanitize.escape(post.description)},
+            image_url = ${sanitize.escape(post.image_url)},
+            color = ${sanitize.escape(post.color)},
+            price = ${sanitize.escape(post.price)},
+            qty = ${sanitize.escape(post.qty)},
+            material = ${sanitize.escape(post.material)},
+            brand_id = ${sanitize.escape(post.brand_id)},
+            type_id = ${sanitize.escape(post.type_id)},
+            user_id = ${sanitize.escape(post.type_id)}                 
             WHERE id = ${params.id}           
             `);
             session.flash({notification: 'Changes Submitted'});

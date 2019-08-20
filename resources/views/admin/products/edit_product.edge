@@ -20,7 +20,7 @@
             <div class="col-lg-9 col-md-12">
                 <div class="card">
                         <div class="card-body">
-                                <form action="/admin/products/products/{{product.id}}?_method=PUT" method="POST">
+                                <form action="/admin/products/{{product.id}}?_method=PUT" method="POST">
                                     {{ csrfField() }}
                                     <div class="row">
                                 <div class="col-sm-9">
@@ -29,9 +29,18 @@
                                 </h4>
                                     </div>
                                     <div class="col-sm-3 d-flex justify-content-end">
-                                    <a href="/admin/products/products/{{product.id}}/delete" onclick="return confirm('Verify Delete');"><button type="submit" class="btn btn-danger mb-3">Delete</button></a>
+                                    <a href="/admin/products/{{product.id}}/delete" onclick="return confirm('Verify Delete');"><button type="submit" class="btn btn-danger mb-3">Delete</button></a>
                                     </div>
                                 </div>
+                                
+                                <div class="form-group">
+                                    <label for="sku" class="col-form-label">SKU</label>
+                                    <input class="form-control" type="text" placeholder="SKU Here" id="sku" name="sku" value="{{old ('sku', product.sku)}}">
+                                    @if(hasErrorFor('title'))
+                                    <small class="form-text text-muted" style="color: red !important">{{ getErrorFor('sku')}}</small>
+                                    @endif
+                                </div>
+
                                     <div class="form-group">
                                         <label for="title" class="col-form-label">Title</label>
                                         <input class="form-control" type="text" placeholder="Title Here" id="title" name="title" value="{{old ('title', product.title)}}">
@@ -39,15 +48,85 @@
                                         <small class="form-text text-muted" style="color: red !important">{{ getErrorFor('title')}}</small>
                                         @endif
                                     </div>
+                                    
+                                    <div class="form-group">
+                                        <label for="description" class="col-form-label">Description</label>
+                                    <textarea class="form-control" type="text" id="description" name="description" value="{{old ('description','product.description')}}">{{product.description}}</textarea>
+                                        @if(hasErrorFor('description'))
+                                    <small class="form-text text-muted" style="color: red !important">{{ getErrorFor('description')}}</small>
+                                    @endif
+                                    </div>
+                                
 
                                 <div class="form-group">
-                                            <label for="description" class="col-form-label">Description</label>
-                                            <textarea class="form-control" type="text" placeholder="Write Description" id="description" name="description" value="{{old ('description', product.description)}}">{{product.description}}</textarea>
-                                            @if(hasErrorFor('description'))
-                                            <small class="form-text text-muted" style="color: red !important">{{ getErrorFor('description')}}</small>
-                                            @endif
+                                    <div class="input-group mb-3">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text" id="basic-addon3">Image URL</span>
                                         </div>
+                                        <input class="form-control" type="text" placeholder="Image URL" id="image_url" name="image_url" value="{{old ('image_url', product.image_url)}}">
                                     </div>
+                                    @if(hasErrorFor('image_url'))
+                                    <small class="form-text text-muted" style="color: red !important">{{ getErrorFor('image_url')}}</small>
+                                    @endif
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="color" class="col-form-label">Color</label>
+                                    <input class="form-control" type="text" placeholder="Color Here" id="color" name="color" value="{{old ('color', product.color)}}">
+                                    @if(hasErrorFor('color'))
+                                    <small class="form-text text-muted" style="color: red !important">{{ getErrorFor('color')}}</small>
+                                    @endif
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="price" class="col-form-label">Price</label>
+                                    <input class="form-control" type="text" placeholder="Price Here" id="price" name="price" value="{{old ('price',product.price)}}">
+                                    @if(hasErrorFor('price'))
+                                    <small class="form-text text-muted" style="color: red !important">{{ getErrorFor('price')}}</small>
+                                    @endif
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="qty" class="col-form-label">QTY</label>
+                                    <input class="form-control" type="number" id="qty" name="qty" value="{{old ('qty',product.qty)}}">
+                                    @if(hasErrorFor('qty'))
+                                    <small class="form-text text-muted" style="color: red !important">{{ getErrorFor('qty')}}</small>
+                                    @endif
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="material" class="col-form-label">Material</label>
+                                    <input class="form-control" type="text" id="material" name="material" value="{{old ('material',product.material)}}">
+                                    @if(hasErrorFor('material'))
+                                    <small class="form-text text-muted" style="color: red !important">{{ getErrorFor('material')}}</small>
+                                    @endif
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="brand_id" class="col-form-label">Brand ID</label>
+                                    <input class="form-control" type="number" id="brand_id" name="brand_id" value="{{old ('brand_id',product.brand_id)}}">
+                                    @if(hasErrorFor('brand_id'))
+                                    <small class="form-text text-muted" style="color: red !important">{{ getErrorFor('brand_id')}}</small>
+                                    @endif
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="type_id" class="col-form-label">Type ID</label>
+                                    <input class="form-control" type="number" id="type_id" name="type_id" value="{{old ('type_id',product.type_id)}}">
+                                    @if(hasErrorFor('type_id'))
+                                    <small class="form-text text-muted" style="color: red !important">{{ getErrorFor('type_id')}}</small>
+                                    @endif
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="user_id" class="col-form-label">User ID</label>
+                                    <input class="form-control" type="number" id="user_id" name="user_id" value="{{old ('user_id',product.user_id)}}">
+                                    @if(hasErrorFor('user_id'))
+                                    <small class="form-text text-muted" style="color: red !important">{{ getErrorFor('user_id')}}</small>
+                                    @endif
+                                </div>
+                                
+                                </div>
                                     
                                     <div class="form-group "><button type="submit" class="btn btn-dark mt-4 pr-4 pl-4">Submit</button></div>
                                 </form>

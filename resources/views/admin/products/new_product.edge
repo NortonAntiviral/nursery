@@ -48,7 +48,7 @@
                                         <small class="form-text text-muted" style="color: red !important">{{ getErrorFor('description')}}</small>
                                         @endif
                                         </div>
-                                    </div>
+                                    
 
                                     <div class="form-group">
                                         <div class="input-group mb-3">
@@ -95,12 +95,29 @@
                                     </div>
 
                                     <div class="form-group">
+                                        <label for="brand_id" class="col-form-label">Brand ID</label>
+                                        <input class="form-control" type="number" id="brand_id" name="brand_id" value="{{old ('brand_id','')}}">
+                                        @if(hasErrorFor('brand_id'))
+                                        <small class="form-text text-muted" style="color: red !important">{{ getErrorFor('brand_id')}}</small>
+                                        @endif
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="type_id" class="col-form-label">Type ID</label>
+                                        <input class="form-control" type="number" id="type_id" name="type_id" value="{{old ('type_id','')}}">
+                                        @if(hasErrorFor('type_id'))
+                                        <small class="form-text text-muted" style="color: red !important">{{ getErrorFor('type_id')}}</small>
+                                        @endif
+                                    </div>
+
+                                    <div class="form-group">
                                         <label for="user_id" class="col-form-label">User ID</label>
                                         <input class="form-control" type="number" id="user_id" name="user_id" value="{{old ('user_id','')}}">
                                         @if(hasErrorFor('user_id'))
                                         <small class="form-text text-muted" style="color: red !important">{{ getErrorFor('user_id')}}</small>
                                         @endif
                                     </div>
+                                </div>
                                     
                                     <div class="form-group "><button type="submit" class="btn btn-dark mt-4 pr-4 pl-4">Submit</button></div>
                                 </form>
