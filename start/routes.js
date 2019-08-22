@@ -54,6 +54,34 @@ Route.put('/admin/products/tags/:id', 'Admin/Products/TagController.update');
 Route.get('/admin/products/tags/:id/edit', 'Admin/Products/TagController.edit');
 Route.get('/admin/products/tags/:id/delete', 'Admin/Products/TagController.delete');
 
+// Admin/Users**********************************************************************
+Route.get('/admin/users', 'Admin/Users/UserController.index');
+Route.post('/admin/users/', 'Admin/Users/UserController.store');
+Route.get('/admin/users/new', 'Admin/Users/UserController.create');
+Route.put('/admin/users/:id', 'Admin/Users/UserController.update');
+Route.get('/admin/users/:id/edit', 'Admin/Users/UserController.edit');
+Route.get('/admin/users/:id/delete', 'Admin/Users/UserController.delete');
+
+// Admin/Users/Roles**********************************************************************
+Route.get('/admin/users/roles', 'Admin/Users/RoleController.index');
+Route.post('/admin/users/roles', 'Admin/Users/RoleController.store');
+Route.get('/admin/users/roles/new', 'Admin/Users/RoleController.create');
+Route.put('/admin/users/roles/:id', 'Admin/Users/RoleController.update');
+Route.get('/admin/users/roles/:id/edit', 'Admin/Users/RoleController.edit');
+Route.get('/admin/users/roles/:id/delete', 'Admin/Users/RoleController.delete');
+
+// Admin/Users/Addresses**********************************************************************
+Route.get('/admin/users/addresses', 'Admin/Users/AddressController.index');
+Route.post('/admin/users/addresses', 'Admin/Users/AddressController.store');
+Route.get('/admin/users/addresses/new', 'Admin/Users/AddressController.create');
+Route.put('/admin/users/addresses/:id', 'Admin/Users/AddressController.update');
+Route.get('/admin/users/addresses/:id/edit', 'Admin/Users/AddressController.edit');
+Route.get('/admin/users/addresses/:id/delete', 'Admin/Users/AddressController.delete');
+
+// Admin/Users/UserSearch**********************************************************************
+/*
+// ****************************************/
+
 // Products
 Route.get('/products', 'ProductController.index');
 Route.get('/:brands/:subcategory/:slug', 'ProductController.show');

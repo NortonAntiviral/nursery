@@ -28,7 +28,7 @@ class RoleSeeder {
     try {
       const service = await Database.raw(`
       INSERT INTO nursery.roles(title)
-      Values("customer")
+      Values("faculty")
       `)
       console.log(`added Service to Roles Table`);
     } catch (error) {

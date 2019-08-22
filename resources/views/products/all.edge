@@ -84,13 +84,16 @@ Nursery of Kickz | Products
     <div class="all-products-grid">
       @each(product in products)
       <div class="product-wrap">
-          <div class="product">
-          <div class="">
-            <img src="/img/products/Nike-Jordan-1-Retro.png" alt="">
+          <a href="#">
+            <div class="product">
+           <div class="">
+            {{--  <img src="/img/products/Nike-Jordan-1-Retro.png" alt="">  --}}
+          <img src="{{product.image_url}}" alt="shoe">
           </div>
           </div>
-          <div class="title">Nike Air Jordan Retro</div>
-          <div class="price">$349</div>
+        </a>
+        <div class="title">{{product.title}}</div>
+        <div class="price">${{product.price}}</div>
           </div>
       @endeach
       

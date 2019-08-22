@@ -9,9 +9,31 @@ class ProductController {
         let start = request.all().hasOwnProperty('page') ? ((parseInt(request.all().page) - 1) * pageRows) : 0;       
         try{
             let allProducts = await Database.raw(`
-            SELECT *, DATE_FORMAT(products.updated_at, '%m-%d-%y') as updated_at, DATE_FORMAT(products.created_at, '%m-%d-%y') as created_at FROM products ORDER BY title ASC LIMIT ${start}, ${pageRows}    
-            `);
-            allProducts = allProducts[0];
+            SELECT products.id,
+            products.sku,
+            products.title,
+            products.description,
+            products.image_url,
+            products.color,
+            products.price,
+            products.qty,
+            products.material,
+            types.title as type,
+            brands.title as brand,
+            products.user_id,
+            concat(users.l_name,', ',users.f_name) as updated_by,
+            DATE_FORMAT(products.created_at, '%m-%d-%y') as created_at,
+            DATE_FORMAT(products.updated_at, '%m-%d-%y') as updated_at
+            FROM products
+            INNER JOIN brands
+            ON products.brand_id = brands.id
+            INNER JOIN types
+            ON products.type_id = types.id
+            INNER JOIN users
+            ON products.user_id = users.id
+            ORDER BY title ASC LIMIT ${start}, ${pageRows}     
+            `)
+            allProducts = allProducts[0]
             let tableRows = await Database.raw(`
             SELECT COUNT("id") as tableRows FROM products
             `);
@@ -63,7 +85,7 @@ class ProductController {
         try{
             const post = request.post();
             await Database.raw(`
-            INSERT INTO products (title, description) VALUES(
+            INSERT INTO products (sku, title, image_url, description, color, price, qty, material, brand_id, type_id, user_id ) VALUES(
                 ${sanitize.escape(post.sku)},
                 ${sanitize.escape(post.title)},
                 ${sanitize.escape(post.image_url)},
@@ -74,7 +96,7 @@ class ProductController {
                 ${sanitize.escape(post.material)},
                 ${sanitize.escape(post.brand_id)},
                 ${sanitize.escape(post.type_id)},
-                ${sanitize.escape(post.type_id)}
+                ${sanitize.escape(post.user_id)}
                 )            
             `);
             session.flash({notification: 'Changes Submitted'});
@@ -128,7 +150,7 @@ class ProductController {
             material = ${sanitize.escape(post.material)},
             brand_id = ${sanitize.escape(post.brand_id)},
             type_id = ${sanitize.escape(post.type_id)},
-            user_id = ${sanitize.escape(post.type_id)}                 
+            user_id = ${sanitize.escape(post.user_id)}                 
             WHERE id = ${params.id}           
             `);
             session.flash({notification: 'Changes Submitted'});
