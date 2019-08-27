@@ -28,7 +28,7 @@ class RoleSeeder {
     try {
       const service = await Database.raw(`
       INSERT INTO nursery.roles(title)
-      Values("faculty")
+      Values("staff")
       `)
       console.log(`added Service to Roles Table`);
     } catch (error) {
@@ -40,6 +40,15 @@ class RoleSeeder {
       Values("admin")
       `)
       console.log(`added Admin to Roles Table`);
+    } catch (error) {
+      console.log(error);
+    }
+    try {
+      const prime = await Database.raw(`
+      INSERT INTO nursery.roles(title)
+      Values("master")
+      `)
+      console.log(`added Prime to Role Table`);
     } catch (error) {
       console.log(error);
     }

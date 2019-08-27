@@ -58,7 +58,7 @@ class ProductSeeder {
     try {                   
       const chuckTaylorOW = await Database.raw(`
       INSERT INTO nursery.products(sku, title, description, image_url, color, price, qty, material, brand_id, type_id, user_id)
-      Values("CONCTO3804WHITE","Yeezy Boost 350 V2",
+      Values("CONCTO3804WHITE","Chuck Tayer Off White",
        "insert description",
         "/img/products/Converse-Chuck-Taylor-Off-White.png","white",300,10,"mesh", 3, 6, 5)
       `)

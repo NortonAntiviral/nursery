@@ -64,8 +64,24 @@ class AddressSeeder {
     } catch (error) {
       console.log(error);
     }
+    try {
+      const customer = await Database.raw(`
+      INSERT INTO nursery.addresses(address,address_2, city, state, country, zipcode, address_type, user_id)
+      Values("123 Big Walkway", "", "Tampa","fl", "USA", "34620", "billing", 6 )
+      `)
+    } catch (error) {
+      console.log(error);
+    }
+    try {
+      const customer = await Database.raw(`
+      INSERT INTO nursery.addresses(address,address_2, city, state, country, zipcode, address_type, user_id)
+      Values("123 Big Walkway", "", "Tampa","fl", "USA", "34620", "shipping", 6 )
+      `)
+    } catch (error) {
+    console.log(error);
+    }
     console.log('Added addresses to customers')
-  }
 }
 
+}
 module.exports = AddressSeeder

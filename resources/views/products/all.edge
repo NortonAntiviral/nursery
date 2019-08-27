@@ -82,22 +82,49 @@ Nursery of Kickz | Products
 
      </div>
     <div class="all-products-grid">
-      @each(product in products)
+      @each(product in allProducts)
       <div class="product-wrap">
           <a href="#">
             <div class="product">
            <div class="">
             {{--  <img src="/img/products/Nike-Jordan-1-Retro.png" alt="">  --}}
-          <img src="{{product.image_url}}" alt="shoe">
+          <img style="height: 15vw;
+                      width: 22vw;"src="{{product.image_url}}" alt="shoe">
           </div>
           </div>
         </a>
-        <div class="title">{{product.title}}</div>
-        <div class="price">${{product.price}}</div>
-          </div>
+        <div class="title">{{product.title}} </div>
+        <div class="price">$ {{product.price}}</div>
+        
+      </div>
       @endeach
-      
     </div>
+    <div class="d-flex justify-content-center">
+      <nav aria-label="...">
+              <ul class="pagination pg-color-border">
+                      @if(currentPage !== arrayOfPages[0])
+                      <li class="page-item">
+                              <a class="page-link" href="/admin/products/?page={{currentPage - 1}}&rows={{pageRows}}" tabindex="-1">Previous</a>
+                          </li>
+                      @endif
+                  @each(page in arrayOfPages)
+                  
+                  <li class="page-item  
+                  @if(page == currentPage)
+                  active
+                  @endif
+                  ">
+                      <a class="page-link" href="/admin/products/?page={{page}}&rows={{pageRows}}">{{page}} <span class="sr-only">(current)</span></a>
+                  </li>
+                  @endeach
+                  @if(currentPage !== totalPages)
+                  <li class="page-item">
+                          <a class="page-link" href="/admin/products/?page={{currentPage + 1}}&rows={{pageRows}}">Next</a>
+                      </li>
+                  @endif
+              </ul>
+          </nav>
+</div>
   </section>
     
  @endsection

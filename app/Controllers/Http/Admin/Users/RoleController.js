@@ -46,6 +46,65 @@ class RoleController {
             return response.redirect('back');
         }
     }
+    
+    async store({view, auth, request, response, session}){
+          const validation = await validate(request.all(), {
+            title: 'required'
+            });
+          if (validation.fails()) {
+            session.withErrors(validation.messages()).flashAll();
+            session.flash({errors: 'Oops, There was a problem'});
+            return response.redirect('back')
+          }
+        try{
+            const post = request.post();
+            await Database.raw(`
+            INSERT INTO role_user (sku, title, image_url, description, color, price, qty, material, brand_id, type_id, user_id ) VALUES(
+                ${sanitize.escape(post.title)}
+                )            
+            `);
+            session.flash({notification: 'Changes Submitted'});
+            return response.redirect('/admin/users');
+        } catch(error){
+            console.log(error);
+            return response.redirect('back');
+        }
+    }
+    async edit({view, auth, request, response, params}){
+        try{
+            let role = await Database.raw(`
+            SELECT * from role_user WHERE id = ${params.id}
+            `);
+            role = role[0][0];
+
+            return view.render('admin/users/roles/edit_roles.edge', { role });
+        } catch(error){
+            console.log(error);
+            return response.redirect('back');
+        }
+    }
+    async update({view, auth, request, response,params,session}){
+        const validation = await validate(request.all(), {
+        title: 'required'});
+        if (validation.fails()) {
+          session.withErrors(validation.messages()).flashAll();
+          session.flash({errors: 'Oops, There was a problem'});
+          return response.redirect('back')
+        }
+        try{
+            const post = request.post();
+            await Database.raw(`
+            UPDATE role_user
+            SET
+            title = ${sanitize.escape(post.title)}
+            `);
+            session.flash({notification: 'Changes Submitted'});
+            return response.redirect(`/admin/users/roles/${params.id}/edit`);
+        } catch(error){
+            console.log(error);
+            return response.redirect('back');
+        }
+    }
 }
 
 module.exports = RoleController

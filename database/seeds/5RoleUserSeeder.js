@@ -56,7 +56,15 @@ class RoleUserSeeder {
     } catch (error) {
       console.log(error);
     }
-    console.log("added roles to 5 users on Role_User table")
+    try {
+      const customer = await Database.raw(`
+      INSERT INTO nursery.role_user(role_id, user_id)
+      Values(4,6)
+      `)
+    } catch (error) {
+      console.log(error);
+    }
+    console.log("added roles to 5 users  and Master to Role_User table")
   }
 }
 

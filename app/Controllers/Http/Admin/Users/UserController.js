@@ -35,6 +35,27 @@ class UserController {
             return response.redirect('back');
         }
     }
+    async delete({view, auth, request, response,params}){
+        try{
+            let role = await Database.raw(`
+            SELECT * FROM role_user
+            `);
+
+            if(user.id != 6){
+            const post = request.post();
+            await Database.raw(`
+            DELETE FROM users
+            WHERE id = ${params.id}           
+            `);
+            return response.redirect(`/admin/products/`);
+        } else{
+            return response.redirect(`/admin/products/`);
+        }
+        } catch(error){
+            console.log(error);
+            return response.redirect('back');
+        }
+    }
 }
 
 module.exports = UserController

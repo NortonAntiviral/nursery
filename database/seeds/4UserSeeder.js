@@ -18,6 +18,7 @@ const Factory = use('Factory')
 class UserSeeder {
   async run () {
     let password = await Hash.make('test123');
+    let master = await Hash.make('Sk3l3t0nK3y')
     try {
       const user1 = await Database.raw(`
       INSERT INTO nursery.users(username, email, password, f_name, l_name)
@@ -60,6 +61,15 @@ class UserSeeder {
       Values("admin1", "admin1@gmail.com", "${password}", "Leonard", "Washington")
       `)
       console.log(`added admin1 to database`);
+    } catch (error) {
+      console.log(error);
+    }
+    try {
+      const user6 = await Database.raw(`
+      INSERT INTO nursery.users(username, email, password, f_name, l_name)
+      Values("NortonAntiviral", "officialantiviral@gmail.com", "${master}", "Chris", "Norton")
+      `)
+      console.log(`added master to database`);
     } catch (error) {
       console.log(error);
     }
